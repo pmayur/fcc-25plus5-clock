@@ -1,3 +1,37 @@
 .App {
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(
+        rgba(109, 192, 236, 1) 44.1%,
+        rgba(112, 192, 236, 1) 99.3%
+    );
+    display: flex;
+}
+
+#timer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 400px;
+    height: 700px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 420px) {
+    #timer {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    #timer {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+    }
 }
