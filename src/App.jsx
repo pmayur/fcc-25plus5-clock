@@ -1,5 +1,6 @@
 import "./App.css";
 import ControlPanel from "./ControlPanel/ControlPanel";
+import TimerPanel from "./TimerPanel/TimerPanel"
 
 function App() {
     return (
@@ -8,7 +9,9 @@ function App() {
                 <div>
                     <ControlPanel />
                 </div>
-                <div></div>
+                <div>
+                    <TimerPanel />
+                </div>
             </div>
         </div>
     );
