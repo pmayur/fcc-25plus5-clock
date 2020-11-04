@@ -7,7 +7,7 @@ const initialState = {
     breakLength: 5,
 };
 
-export const rootReducer = (state = intialState, action) => {
+export const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case SESSION.INCREMENT: {
 
