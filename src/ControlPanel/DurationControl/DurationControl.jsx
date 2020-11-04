@@ -1,7 +1,7 @@
 import "./DurationControl.css";
 
-import addIcon from '../assets/baseline_add_circle_black_18dp.png';
-import removeIcon from '../assets/baseline_remove_circle_black_18dp.png'
+import addIcon from '../../assets/baseline_add_circle_black_18dp.png';
+import removeIcon from '../../assets/baseline_remove_circle_black_18dp.png'
 
 export default function DurationControl() {
     return (
