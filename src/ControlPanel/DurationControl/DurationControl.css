@@ -1,0 +1,34 @@
+#duration{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#label {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#length {
+    font-size: 50px;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#control {
+    height: 20%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#increment, #decrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
