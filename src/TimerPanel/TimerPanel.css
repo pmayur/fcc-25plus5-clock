@@ -1,0 +1,39 @@
+#timer-panel {
+    height: 100%;
+    width: 100%;
+}
+
+#timer-label {
+    height: 10%;
+    font-size: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#time-left {
+    height: 30%;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttons {
+    height: 15%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+}
+
+#start_stop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
