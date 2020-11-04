@@ -1,19 +1,68 @@
 import "./DurationControl.css";
 
-import addIcon from '../../assets/baseline_add_circle_black_18dp.png';
-import removeIcon from '../../assets/baseline_remove_circle_black_18dp.png'
+import addIcon from "../../assets/baseline_add_circle_black_18dp.png";
+import removeIcon from "../../assets/baseline_remove_circle_black_18dp.png";
 
-export default function DurationControl() {
+import { useSelector, useDispatch } from "react-redux";
+import { TIMER_IN } from "../../utilities";
+
+// import actions for incrementing/decrementing session/break
+import {
+    incrementBreak,
+    incrementSession,
+    decrementBreak,
+    decrementSession,
+} from "../../actions";
+
+export default function DurationControl(props) {
+    const state = useSelector((state) => state);
+    const dispatch = useDispatch();
+
+    // stores name of component type i.e. to control Break or Session time
+    let timerName = props.timer;
+
+    // setting these variables assuming the component to be for Break time control
+    let timerLength = state.breakLength;
+    let incrementAction = incrementBreak;
+    let decrementAction = decrementBreak;
+
+    // changing these variables if assumption incorrect and component of Session time control
+    if (props.timer === TIMER_IN.SESSION) {
+        timerLength = state.sessionLength;
+        incrementAction = incrementSession;
+        decrementAction = decrementSession;
+    }
+
     return (
         <div id="duration">
-            <div id="label">Break</div>
-            <div id="length">12</div>
+
+            {/* displays the component type name */}
+            <div className="b-s-label" id={timerName + "-label"}>
+                {timerName}
+            </div>
+
+            {/* displays the component type length */}
+            <div className="b-s-length" id={timerName + "-length"}>
+                {timerLength}
+            </div>
+
+            {/* controls the time length i.e. increment/decrement */}
             <div id="control">
-                <div id="increment">
-                    <img src={addIcon} alt="alternatetext"/>
+                <div className="b-s-length-control" id="increment">
+                    <img
+                        src={addIcon}
+                        alt="alternatetext"
+                        id={timerName + "-increment"}
+                        onClick={() => dispatch(incrementAction())}
+                    />
                 </div>
                 <div id="decrement">
-                    <img src={removeIcon} alt="alternatetext"/>
+                    <img
+                        src={removeIcon}
+                        alt="alternatetext"
+                        id={timerName + "-decrement"}
+                        onClick={() => dispatch(decrementAction())}
+                    />
                 </div>
             </div>
         </div>
