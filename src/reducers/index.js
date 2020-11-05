@@ -1,10 +1,15 @@
-import { SESSION, BREAK } from "../utilities";
+import { SESSION, BREAK, TIMER_IN } from "../utilities";
 
 import { increment, decrement } from "../helper"
 
 const initialState = {
     sessionLength: 25,
     breakLength: 5,
+    timeLeft: {
+        minutes: 25,
+        seconds: 0
+    },
+    currentTimer: TIMER_IN.SESSION
 };
 
 export const rootReducer = (state = initialState, action) => {
@@ -12,17 +17,27 @@ export const rootReducer = (state = initialState, action) => {
         case SESSION.INCREMENT: {
 
             let sessionLength = increment(state.sessionLength);
+            let seconds = state.timeLeft.seconds;
 
             return Object.assign({}, state, {
                 sessionLength,
+                timeLeft: {
+                    minutes: sessionLength,
+                    seconds
+                }
             });
         }
 
         case SESSION.DECREMENT: {
             let sessionLength = decrement(state.sessionLength);
+            let seconds = state.timeLeft.seconds;
 
             return Object.assign({}, state, {
                 sessionLength,
+                timeLeft: {
+                    minutes: sessionLength,
+                    seconds
+                }
             });
         }
 
