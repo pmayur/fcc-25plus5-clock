@@ -28,16 +28,16 @@ export const incrementBreak = () => {
 
 }
 
-export const changeMinutes = (minute) => {
+export const changeMinutes = (minutes) => {
     return {
         type: CHANGE.MINUTES,
-        minute
+        minutes
     }
 }
 
-export const changeSeconds = (second) => {
+export const changeSeconds = (seconds) => {
     return {
         type: CHANGE.SECONDS,
-        second
+        seconds
     }
 }

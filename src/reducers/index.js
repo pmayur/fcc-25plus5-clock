@@ -23,7 +23,7 @@ export const rootReducer = (state = initialState, action) => {
                 sessionLength,
                 timeLeft: {
                     minutes: sessionLength,
-                    seconds
+                    seconds: 0
                 }
             });
         }
@@ -36,7 +36,7 @@ export const rootReducer = (state = initialState, action) => {
                 sessionLength,
                 timeLeft: {
                     minutes: sessionLength,
-                    seconds
+                    seconds: 0
                 }
             });
         }
