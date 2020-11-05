@@ -1,4 +1,4 @@
-import { SESSION, BREAK, TIMER_IN } from "../utilities";
+import { CHANGE, SESSION, BREAK, TIMER_IN } from "../utilities";
 
 import { increment, decrement } from "../helper"
 
@@ -55,6 +55,30 @@ export const rootReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 breakLength,
             });
+        }
+
+        case CHANGE.MINUTES: {
+            let minutes = action.minutes;
+            let seconds = state.timeLeft.seconds;
+
+            return Object.assign({}, state, {
+                timeLeft: {
+                    minutes,
+                    seconds
+                }
+            })
+        }
+        
+        case CHANGE.SECONDS: {
+            let minutes = state.timeLeft.minutes;
+            let seconds = action.seconds;
+
+            return Object.assign({}, state, {
+                timeLeft: {
+                    minutes,
+                    seconds
+                }
+            })
         }
 
         default: return state;

@@ -1,4 +1,4 @@
-import {SESSION, BREAK} from '../utilities'
+import {SESSION, BREAK, CHANGE} from '../utilities'
 
 export const decrementSession = () => {
     return {
@@ -26,4 +26,18 @@ export const incrementBreak = () => {
         type : BREAK.INCREMENT
     }
 
+}
+
+export const changeMinutes = (minute) => {
+    return {
+        type: CHANGE.MINUTES,
+        minute
+    }
+}
+
+export const changeSeconds = (second) => {
+    return {
+        type: CHANGE.SECONDS,
+        second
+    }
 }

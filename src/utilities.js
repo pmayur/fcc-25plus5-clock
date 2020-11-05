@@ -13,3 +13,8 @@ export const BREAK = {
     INCREMENT: "BREAK_INCREMENT",
     DECREMENT: "BREAK_DECREMENT",
 };
+
+export const CHANGE = {
+    MINUTES: 'Minutes',
+    SECONDS: 'Seconds'
+}
