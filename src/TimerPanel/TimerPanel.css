@@ -26,13 +26,13 @@
     
 }
 
-#start_stop {
+#start_stop-section {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#reset {
+#reset-section {
     display: flex;
     align-items: center;
     justify-content: center;
