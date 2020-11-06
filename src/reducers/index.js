@@ -127,6 +127,10 @@ export const rootReducer = (state = initialState, action) => {
             return Object.assign({}, state, { running: !state.running });
         }
 
+        case "RESET": {
+            return initialState;
+        }
+
         default:
             return state;
     }

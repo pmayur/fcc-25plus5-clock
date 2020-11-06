@@ -53,3 +53,9 @@ export const startStopTimer = () => {
         type: "STOP"
     }
 }
+
+export const resetTimer = () => {
+    return {
+        type: "RESET"
+    }
+}
