@@ -1,8 +1,8 @@
 import "./TimerPanel.css";
 
-import startButton from "../assets/baseline_play_circle_filled_black_18dp.png";
-import pauseButton from "../assets/baseline_pause_circle_filled_black_18dp.png";
-import resetButton from "../assets/baseline_refresh_black_18dp.png";
+import startButton from "../assets/play-circle.svg";
+import pauseButton from "../assets/pause-circle.svg";
+import resetButton from "../assets/refresh-cw.svg";
 
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,7 +14,7 @@ import {
     changeSeconds,
     toggleCurrentTimer,
     startStopTimer,
-    resetTimer
+    resetTimer,
 } from "../actions";
 
 export default function TimerPanel() {
@@ -44,17 +44,15 @@ export default function TimerPanel() {
     }
 
     const startedActions = () => {
-        console.log(time)
+        console.log(time);
         if (time >= 0) {
-            if(time === 0){
+            if (time === 0) {
                 document.getElementById("beep").play();
             }
 
             setTime(time - 1);
             dispatch(changeMinutes(Math.floor(time / 60)));
             dispatch(changeSeconds(time % 60));
-
-            
         } else if (time < 0) {
             if (state.currentTimer === TIMER_IN.SESSION) {
                 dispatch(changeMinutes(state.breakLength));
@@ -74,9 +72,7 @@ export default function TimerPanel() {
     }, 1000);
 
     const startTimer = () => {
-        setTime(
-            (state.timeLeft.minutes * 60 + state.timeLeft.seconds) - 1
-        );
+        setTime(state.timeLeft.minutes * 60 + state.timeLeft.seconds - 1);
         dispatch(startStopTimer());
         setIsStarted(true);
     };
@@ -89,16 +85,18 @@ export default function TimerPanel() {
         setIsStarted(false);
         document.getElementById("beep").pause();
         document.getElementById("beep").currentTime = 0;
-        dispatch(resetTimer())
-    }
+        dispatch(resetTimer());
+    };
 
     return (
         <div id="timer-panel">
-            <audio
-                src="http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3"
-                id="beep"
-            />
-            <div id="timer-label">{state.currentTimer}</div>
+            <div id="timer-label">
+                <audio
+                    src="http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3"
+                    id="beep"
+                />
+                {state.currentTimer}
+            </div>
             <div id="time-left">
                 {state.timeLeft.minutes < 10
                     ? "0" + state.timeLeft.minutes

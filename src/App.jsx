@@ -7,10 +7,10 @@ function App() {
         <div className="App">
             <div id="timer">
                 <div>
-                    <ControlPanel />
+                    <TimerPanel />
                 </div>
                 <div>
-                    <TimerPanel />
+                    <ControlPanel />
                 </div>
             </div>
         </div>

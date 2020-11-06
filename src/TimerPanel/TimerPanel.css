@@ -1,6 +1,17 @@
 #timer-panel {
     height: 100%;
     width: 100%;
+    background: rgb(93, 69, 126);
+    background: linear-gradient(
+        142deg,
+        rgba(93, 69, 126, 1) 20%,
+        rgba(29, 33, 89, 1) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 #timer-label {
@@ -9,6 +20,8 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    text-transform: capitalize;
+    letter-spacing: 2px;
 }
 
 #time-left {
@@ -17,13 +30,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    letter-spacing: 6px;
 }
 
 #buttons {
     height: 15%;
     display: grid;
     grid-template-columns: 50% 50%;
-    
+    width: 40%;
 }
 
 #start_stop-section {
@@ -36,4 +51,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#start_stop, #reset {
+    filter: invert(100%);
+    height: 30px;
+    width: 30px;
 }
