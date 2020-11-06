@@ -41,3 +41,15 @@ export const changeSeconds = (seconds) => {
         seconds
     }
 }
+
+export const toggleCurrentTimer = () => {
+    return {
+        type: CHANGE.TIMER
+    }
+}
+
+export const startStopTimer = () => {
+    return {
+        type: "STOP"
+    }
+}

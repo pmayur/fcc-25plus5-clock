@@ -1,7 +1,6 @@
 export const TIMER_IN = {
     SESSION: "session",
     BREAK: "break",
-    STANDBY: 'standby'
 };
 
 // for actions
@@ -17,5 +16,6 @@ export const BREAK = {
 
 export const CHANGE = {
     MINUTES: 'Minutes',
-    SECONDS: 'Seconds'
+    SECONDS: 'Seconds',
+    TIMER: 'Timer'
 }
