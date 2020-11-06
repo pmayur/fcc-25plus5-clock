@@ -44,7 +44,6 @@ export default function TimerPanel() {
     }
 
     const startedActions = () => {
-        console.log(time);
         if (time >= 0) {
             if (time === 0) {
                 document.getElementById("beep").play();
