@@ -17,7 +17,6 @@ export const rootReducer = (state = initialState, action) => {
         case SESSION.INCREMENT: {
 
             let sessionLength = increment(state.sessionLength);
-            let seconds = state.timeLeft.seconds;
 
             return Object.assign({}, state, {
                 sessionLength,
@@ -30,7 +29,6 @@ export const rootReducer = (state = initialState, action) => {
 
         case SESSION.DECREMENT: {
             let sessionLength = decrement(state.sessionLength);
-            let seconds = state.timeLeft.seconds;
 
             return Object.assign({}, state, {
                 sessionLength,
