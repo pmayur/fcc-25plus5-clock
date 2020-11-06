@@ -1,6 +1,7 @@
 export const TIMER_IN = {
     SESSION: "session",
     BREAK: "break",
+    STANDBY: 'standby'
 };
 
 // for actions
